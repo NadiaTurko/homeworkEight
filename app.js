@@ -63,12 +63,20 @@ const checkNumberPhone = function (numberPhone) {
 // •  Тільки латинські літери в великому (A-Z) і малому (a-z) регістрах.
 // •  В тілі емейла допустимі лишеі символи “_” і “-”. Але вони не можуть бути 1-им символом емейлу.
 //  •  Символ “-” не може повторюватися.
+const validEmail = function (email) {
+  const rexExp = /^\w+[\-]?\w+\@(\w+([\-]?\w+)\.(\w{2,6})$)/;
+  if (rexExp.test(email)) {
+    return "Email is correct!";
+  } else {
+    return "Email is not correct!";
+  }
+};
 
-// checkEmail('my_mail@gmail.com');
+// console.log(validEmail("my_mail@gmail.com"));
 // "Email is correct!"
-// checkEmail('#my_mail@gmail.com');
+// console.log(validEmail("#my_mail@gmail.com"));
 // "Email is not correct!"
-// checkEmail('my_ma--il@gmail.com');
+// console.log(validEmail("my_ma--il@gmail.com"));
 // "Email is not correct!"
 
 // 8-6.
@@ -80,6 +88,16 @@ const checkNumberPhone = function (numberPhone) {
 // true
 // //1.1, 3
 
+const checkLogin = function (login) {
+  const rexExp = /^[a-zA-Z]+\d+.\d+/;
+  if (rexExp.test(login)) {
+    return true;
+  } else {
+    return "login is not correct!";
+  }
+};
+console.log(checkLogin("ee1.1ret3"));
 // checkLogin('ee1*1ret3');
 // false
-// //1, 1, 3
+//1, 1, 3
+1;
