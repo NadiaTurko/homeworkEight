@@ -88,15 +88,15 @@ const validEmail = function (email) {
 // true
 // //1.1, 3
 
+
 const checkLogin = function (login) {
-  const rexExp = /^[a-zA-Z]+\d+.\d+/;
+  const rexExp = /^(?![0-9])[A-Za-z\d.]{2,10}$/gi;
   if (rexExp.test(login)) {
     return true;
   } else {
     return "login is not correct!";
   }
 };
-console.log(checkLogin("ee1.1ret3"));
 // checkLogin('ee1*1ret3');
 // false
 //1, 1, 3
