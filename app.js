@@ -90,12 +90,10 @@ const validEmail = function (email) {
 
 
 const checkLogin = function (login) {
-  const rexExp = /^(?![0-9])[A-Za-z\d.]{2,10}$/gi;
-  if (rexExp.test(login)) {
-    return true;
-  } else {
-    return "login is not correct!";
-  }
+  const rexExp = /^[A-Za-z][a-zA-Z\d.]{1,9}$/;
+  const numbers = login.match(/[\d]*\.[\d]+/g);
+  const loginValid = rexExp.test(login);
+  return { loginValid, numbers };
 };
 // checkLogin('ee1*1ret3');
 // false
